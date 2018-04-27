@@ -34,7 +34,7 @@ http://127.0.0.1:3000 访问
 
 ctx.request和ctx.req的区别:
 1. ctx.request:是Koa2中context经过封装的请求对象，它用起来更直观和简单。
-2. ctx.req:是context提供的node.js原生HTTP请求对象。这个虽然不那么直观，但是可以得到更多的内容，适合我们深度编程。
+2. ctx.req:是context提供的node.js原生HTTP请求对象。这个虽然不那么直观，但是可以得到更多的内容。
 
 ## 3.使用koa-bodyparser中间件处理请求
 安装:$ npm install --save koa-bodyparser
@@ -46,7 +46,7 @@ ctx.request.body就是已经处理过的json对象了
 要想实现原生路由，需要得到地址栏输入的路径，然后根据路径的不同进行跳转。
 用ctx.request.url就可以实现。
 
-## 5.Koa-router中间件-多层级路由
+## 5.Koa-router中间件
 安装:$ npm install --save koa-router
 引入:const Router = require('koa-router');const router = new Router()
 使用:router.get('/', (ctx, next) => {//do something})

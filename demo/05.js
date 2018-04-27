@@ -18,16 +18,19 @@ const app = new Koa()
 // 创建子路由结构
 let home=new Router()
 home.get('/test',async(ctx)=>{
-    ctx.body='//http://127.0.0.1:3000/home/test'
+    // 接受get明文参数
+    //${ctx.query}会报错,必须先转换成字符串
+    ctx.body=ctx.query
+    // ctx.body=`${ctx.url}`
 }).get('/todo',async(ctx)=>{
-    ctx.body='http://127.0.0.1:3000/home/todo'
+    ctx.body=`${ctx.url}`
 })
 
 let page=new Router()
 page.get('/test',async(ctx)=>{
-    ctx.body='http://127.0.0.1:3000/page/test'
+    ctx.body=`${ctx.url}`
 }).get('/todo',async(ctx)=>{
-    ctx.body='http://127.0.0.1:3000/page/todo'
+    ctx.body=`${ctx.url}`
 })
 // 装载子路由至主路由下
 let router=new Router()
@@ -36,7 +39,7 @@ router.use('/page',page.routes(),page.allowedMethods())
 // 多层级路由-end
 
 app.use(router.routes()) //主路由装载
-    .use(router.allowedMethods()) //提交方法控制(get/post)
+    .use(router.allowedMethods()) //提交方法控制(get/post),allowedMethods只允许get方法
 
 app.listen(3000, () => {
     // 服务启动后的回调
