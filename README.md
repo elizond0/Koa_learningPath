@@ -52,3 +52,18 @@ ctx.request.body就是已经处理过的json对象了
 使用:router.get('/', (ctx, next) => {//do something})
 装载:app.use(router.routes()).use(router.allowedMethods()) 
 
+## 6.cookie
+设置方法set接收三个参数,key:string,value:string,opts:{}
+ctx.cookies.set(
+    'name','abc',{
+        domain:'127.0.0.1',
+        // path:'/index',//匹配的路径
+        maxAge:3600*1000,//有效时间一小时
+        expires:new Date('2018-12-31'),//失效时间
+        httpOnly:false,//仅http协议生效
+        overwrite:false,//是否支持重写
+    }
+)
+读取方法get,key:string
+ctx.cookies.get('name')
+
