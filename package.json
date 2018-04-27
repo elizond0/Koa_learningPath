@@ -19,6 +19,7 @@
   "homepage": "https://github.com/elizond0/Koa_learningPath#readme",
   "dependencies": {
     "koa": "^2.5.0",
-    "koa-bodyparser": "^4.2.0"
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0"
   }
 }

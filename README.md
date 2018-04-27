@@ -46,4 +46,9 @@ ctx.request.body就是已经处理过的json对象了
 要想实现原生路由，需要得到地址栏输入的路径，然后根据路径的不同进行跳转。
 用ctx.request.url就可以实现。
 
+## 5.Koa-router中间件-多层级路由
+安装:$ npm install --save koa-router
+引入:const Router = require('koa-router');const router = new Router()
+使用:router.get('/', (ctx, next) => {//do something})
+装载:app.use(router.routes()).use(router.allowedMethods()) 
 
