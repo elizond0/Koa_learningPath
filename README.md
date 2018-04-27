@@ -41,3 +41,9 @@ ctx.request和ctx.req的区别:
 引入:const bodyParser = require('koa-bodyparser')
 使用:app.use(bodyParser())
 ctx.request.body就是已经处理过的json对象了
+
+## 4.Koa2实现原生路由
+要想实现原生路由，需要得到地址栏输入的路径，然后根据路径的不同进行跳转。
+用ctx.request.url就可以实现。
+
+
