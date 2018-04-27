@@ -23,7 +23,7 @@ app.listen(3000,()=>{
     console.log('服务启动,端口3000')
 })
 
-$ node get 启动服务
+$ node 01.js 启动服务
 http://127.0.0.1:3000 访问
 
 ## 2.post请求
@@ -36,5 +36,8 @@ ctx.request和ctx.req的区别:
 1. ctx.request:是Koa2中context经过封装的请求对象，它用起来更直观和简单。
 2. ctx.req:是context提供的node.js原生HTTP请求对象。这个虽然不那么直观，但是可以得到更多的内容，适合我们深度编程。
 
-
-
+## 3.使用koa-bodyparser中间件处理请求
+安装:$ npm install --save koa-bodyparser
+引入:const bodyParser = require('koa-bodyparser')
+使用:app.use(bodyParser())
+ctx.request.body就是已经处理过的json对象了
