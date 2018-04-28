@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/elizond0/Koa_learningPath#readme",
   "dependencies": {
+    "ejs": "^2.5.9",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4"
   }
 }
