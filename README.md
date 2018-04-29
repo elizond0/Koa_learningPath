@@ -67,7 +67,7 @@ ctx.cookies.set(
 读取方法get,key:string
 ctx.cookies.get('name')
 
-## 6.Koa2的模板引擎-ejs
+## 7.Koa2的模板引擎-ejs
 在koa2中使用模板机制必须依靠中间件koa-views
 安装中间件:$ npm install --save koa-views
 安装ejs模板引擎:$ npm install --save ejs
@@ -76,5 +76,8 @@ ctx.cookies.get('name')
 3. 加载模板引擎:app.use(views(path.join(__dirname, './view'), {extension: 'ejs'}))
 4. 渲染await ctx.render('index', {title})
 
-
-
+## 8.koa-static静态资源中间件
+安装:$ npm i -s koa-static
+引入:const static=require('koa-static')
+装载:app.use(static(path.join(__dirname,staticPath)))
+http://127.0.0.1:3000/test.jpg即可访问静态资源
